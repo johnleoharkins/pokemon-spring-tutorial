@@ -35,7 +35,7 @@ public class PokemonServiceImpl implements PokemonService {
         pokemon.setType(pokemonDto.getType().toLowerCase());
 
         // todo: compare to exists() later
-        if (pokemonRepository.findByPokemonName(pokemon.getName()).isPresent()){
+        if (pokemonRepository.findByName(pokemon.getName()).isPresent()){
             throw new DuplicatePokemonException("Pokemon already exists");
         }
 
