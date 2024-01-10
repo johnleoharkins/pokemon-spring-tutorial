@@ -19,7 +19,7 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    @PostMapping("/pokemon/{pokemonId}/review")
+    @PostMapping("/pokemon/{pokemonId}/reviews")
     public ResponseEntity<ReviewDto> createReview(@PathVariable(value="pokemonId") int pokemonId, @RequestBody ReviewDto reviewDto){
         return new ResponseEntity<>(reviewService.createReview(pokemonId, reviewDto), HttpStatus.CREATED);
     }
